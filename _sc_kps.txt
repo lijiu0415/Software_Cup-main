@@ -1,0 +1,138 @@
+=== ch01 ===
+kp0101 | 黑客群体分类 | diff=1
+kp0102 | 中国黑客发展三阶段 | diff=1
+kp0103 | Web安全技术发展历程 | diff=1
+kp0104 | 安全问题本质 | diff=2
+kp0105 | 安全三要素CIA | diff=2
+kp0106 | 安全评估四流程 | diff=2
+kp0107 | STRIDE威胁建模 | diff=3
+kp0108 | DREAD风险评估 | diff=3
+kp0109 | 四大安全设计原则 | diff=2
+=== ch02 ===
+kp0201 | 浏览器同源策略 | diff=2
+kp0202 | 同源策略例外标签 | diff=2
+kp0203 | 浏览器沙箱机制 | diff=2
+kp0204 | 浏览器插件安全 | diff=2
+kp0205 | 恶意网址拦截 | diff=1
+kp0206 | EV SSL证书 | diff=1
+kp0207 | IE XSS Filter | diff=2
+kp0208 | Firefox CSP策略 | diff=2
+kp0209 | 浏览器畸形URL | diff=2
+=== ch03 ===
+kp0301 | XSS三种分类 | diff=2
+kp0302 | XSS Payload基础 | diff=2
+kp0303 | XSS进阶利用 | diff=3
+kp0304 | XSS钓鱼攻击 | diff=3
+kp0305 | 客户端信息探测 | diff=2
+kp0306 | CSS历史劫持 | diff=3
+kp0307 | XSS蠕虫传播 | diff=4
+kp0308 | XSS绕过技巧 | diff=3
+kp0309 | Flash XSS风险 | diff=3
+kp0310 | JS框架XSS漏洞 | diff=3
+kp0311 | XSS综合防御 | diff=2
+=== ch04 ===
+kp0401 | CSRF攻击原理 | diff=2
+kp0402 | 浏览器Cookie分类 | diff=2
+kp0403 | P3P头影响 | diff=3
+kp0404 | GET/POST CSRF利用 | diff=2
+kp0405 | Flash CSRF攻击 | diff=3
+kp0406 | CSRF蠕虫 | diff=4
+kp0407 | 验证码防御CSRF | diff=2
+kp0408 | Referer校验 | diff=2
+kp0409 | Anti CSRF Token | diff=2
+=== ch05 ===
+kp0501 | 点击劫持原理 | diff=2
+kp0502 | Flash点击劫持 | diff=3
+kp0503 | 图片覆盖攻击XSIO | diff=3
+kp0504 | 拖拽劫持 | diff=3
+kp0505 | 移动端触屏劫持 | diff=3
+kp0506 | frame busting | diff=2
+kp0507 | X-Frame-Options | diff=2
+=== ch06 ===
+kp0601 | HTML5新标签XSS | diff=2
+kp0602 | iframe sandbox | diff=2
+kp0603 | noreferrer属性 | diff=1
+kp0604 | Canvas安全滥用 | diff=3
+kp0605 | CORS跨域机制 | diff=2
+kp0606 | postMessage漏洞 | diff=3
+kp0607 | Web Storage风险 | diff=2
+=== ch07 ===
+kp0701 | 注入攻击原理 | diff=2
+kp0702 | 基础SQL注入 | diff=2
+kp0703 | SQL布尔盲注 | diff=3
+kp0704 | SQL时间盲注 | diff=3
+kp0705 | 数据库读写文件 | diff=4
+kp0706 | UDF自定义函数 | diff=4
+kp0707 | 存储过程注入 | diff=3
+kp0708 | 宽字符集注入 | diff=3
+kp0709 | SQL字段截断 | diff=3
+kp0710 | SQL注入防御 | diff=2
+=== ch08 ===
+kp0801 | 文件上传漏洞成因 | diff=2
+kp0802 | 文件类型校验绕过 | diff=3
+kp0803 | Apache解析漏洞 | diff=3
+kp0804 | IIS解析漏洞 | diff=3
+kp0805 | PHP CGI解析漏洞 | diff=3
+kp0806 | 上传钓鱼攻击 | diff=3
+kp0807 | 安全文件上传设计 | diff=2
+=== ch09 ===
+kp0901 | 账号认证风险 | diff=2
+kp0902 | 密码安全存储 | diff=2
+kp0903 | 多因素认证 | diff=2
+kp0904 | Session机制风险 | diff=2
+kp0905 | Session固定攻击 | diff=3
+kp0906 | Session劫持 | diff=3
+kp0907 | 单点登录SSO | diff=3
+=== ch10 ===
+kp1001 | 访问控制概念 | diff=1
+kp1002 | 垂直越权 | diff=2
+kp1003 | 水平越权 | diff=2
+kp1004 | OAuth协议风险 | diff=3
+kp1005 | 访问控制防护 | diff=2
+=== ch11 ===
+kp1101 | 加密算法分类 | diff=1
+kp1102 | 流密码攻击 | diff=3
+kp1103 | WEP协议漏洞 | diff=3
+kp1104 | ECB模式缺陷 | diff=3
+kp1105 | 填充Oracle攻击 | diff=4
+kp1106 | 密钥管理规范 | diff=2
+kp1107 | 弱随机数漏洞 | diff=3
+kp1108 | 安全随机数规范 | diff=2
+=== ch12 ===
+kp1201 | MVC框架安全 | diff=2
+kp1202 | 模板引擎XSS | diff=3
+kp1203 | 框架CSRF防护 | diff=2
+kp1204 | HTTP头部安全 | diff=2
+kp1205 | 数据持久层风险 | diff=3
+kp1206 | Struts2漏洞 | diff=4
+kp1207 | Spring MVC漏洞 | diff=3
+kp1208 | Django安全隐患 | diff=3
+kp1209 | 中间件安全配置 | diff=2
+kp1210 | Tomcat/JBoss漏洞 | diff=4
+=== ch13 ===
+kp1301 | DDoS与应用层DDoS | diff=2
+kp1302 | CC攻击原理 | diff=3
+kp1303 | 请求频率限制 | diff=2
+kp1304 | 验证码抗DDoS | diff=2
+kp1305 | Slowloris慢速攻击 | diff=3
+kp1306 | HTTP POST DoS | diff=3
+kp1307 | 正则表达式DoS | diff=3
+=== ch14 ===
+kp1401 | 本地文件包含LFI | diff=3
+kp1402 | 远程文件包含RFI | diff=3
+kp1403 | PHP变量覆盖 | diff=3
+kp1404 | PHP危险函数 | diff=3
+kp1405 | 文件写入代码执行 | diff=3
+kp1406 | PHP安全配置 | diff=2
+=== ch15 ===
+kp1501 | 业务安全设计 | diff=2
+kp1502 | 业务逻辑漏洞 | diff=3
+kp1503 | 账号被盗防护 | diff=2
+kp1504 | 垃圾信息防控 | diff=2
+kp1505 | 用户隐私保护 | diff=2
+kp1506 | 安全开发生命周期SDL | diff=2
+kp1507 | 敏捷开发SDL | diff=3
+kp1508 | 代码安全审计 | diff=2
+kp1509 | 漏洞修补流程 | diff=2
+kp1510 | 安全监控 | diff=2
+kp1511 | 应急响应流程 | diff=2

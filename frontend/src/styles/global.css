@@ -1,0 +1,113 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+
+body {
+  background: #F5F7FA;
+  color: #1F2733;
+  font-family: 'Inter', 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 背景柔和光晕 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(74, 144, 249, 0.10), transparent 60%),
+    radial-gradient(1000px 500px at 90% 0%, rgba(14, 165, 233, 0.08), transparent 55%),
+    radial-gradient(900px 600px at 50% 110%, rgba(245, 158, 11, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.28); }
+
+/* 玻璃卡片 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 14px !important;
+}
+
+/* 步骤切换过渡 */
+.step-fade-enter {
+  animation: stepFadeIn 0.4s ease both;
+}
+@keyframes stepFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 数字等宽加粗 */
+.mono {
+  font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-weight: 700;
+}
+
+/* 柔和发光文字 */
+.glow-text {
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.35);
+}
+
+/* 左侧导航选中项 */
+.sidebar .ant-menu-item-selected {
+  background: rgba(74, 144, 249, 0.12) !important;
+  box-shadow: 0 0 10px rgba(74, 144, 249, 0.15);
+  color: #0284C7 !important;
+}
+.sidebar .ant-menu-item {
+  border-radius: 10px;
+  margin: 2px 0;
+}
+
+/* 浅色 Markdown 渲染（弹窗内容） */
+.dark-md {
+  color: #1F2733;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.dark-md h1, .dark-md h2, .dark-md h3 {
+  color: #1F2733;
+  margin: 16px 0 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 6px;
+}
+.dark-md h1 { font-size: 18px; }
+.dark-md h2 { font-size: 16px; }
+.dark-md h3 { font-size: 15px; }
+.dark-md code {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0284C7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+}
+.dark-md pre {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: auto;
+}
+.dark-md pre code { background: transparent; color: #0EA5E9; padding: 0; }
+.dark-md blockquote {
+  border-left: 3px solid #4A90F9;
+  margin: 8px 0;
+  padding: 4px 12px;
+  color: #6B7280;
+  background: rgba(74, 144, 249, 0.06);
+  border-radius: 0 8px 8px 0;
+}
+.dark-md ul, .dark-md ol { padding-left: 22px; }
+.dark-md table { border-collapse: collapse; width: 100%; }
+.dark-md th, .dark-md td { border: 1px solid rgba(0, 0, 0, 0.12); padding: 6px 10px; text-align: left; }

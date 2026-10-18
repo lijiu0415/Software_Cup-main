@@ -1,0 +1,39 @@
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - chromadata:/chroma/chroma
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      chroma:
+        condition: service_started
+    env_file:
+      - ./.env
+    environment:
+      - CHROMA_URL=http://chroma:8000
+    dns:
+      - 223.5.5.5
+      - 119.29.29.29
+    extra_hosts:
+      - "api.siliconflow.cn:101.132.62.140"
+    volumes:
+      - ./backend:/app  # 挂载整个backend目录（SQLite 数据库文件 a3_edu.db 落在此目录，持久化到宿主机）
+      - ./knowledge_base:/app/knowledge_base
+      - ./docs:/app/docs
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload  # 启用热重载
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  chromadata:

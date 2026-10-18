@@ -1,0 +1,35 @@
+{
+  "name": "a3-edu-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "antd": "^5.17.0",
+    "axios": "^1.7.2",
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "katex": "^0.16.11",
+    "markmap-lib": "^0.18.12",
+    "markmap-view": "^0.18.12",
+    "github-markdown-css": "^5.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.23.0",
+    "rehype-katex": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.11"
+  }
+}
