@@ -7,6 +7,9 @@ import { getCourseProgress, getProfile, getLearningPath, getProfileSummary } fro
 import Sidebar from './components/Sidebar'
 import QaAssistant from './components/QaAssistant'
 import HomePage from './pages/HomePage'
+import ProfileModePage from './pages/ProfileModePage'
+import AccessiblePage from './pages/AccessiblePage'
+import { Button } from 'antd'
 import DashboardPage from './pages/DashboardPage'
 import MainPage from './pages/MainPage'
 import ExercisePage from './pages/ExercisePage'
@@ -28,7 +31,7 @@ function calcStudyDay(registerDate) {
 
 function RequireAuth({ children }) {
   const token = useStore((s) => s.token)
-  if (!token) return <Navigate to="/" replace />
+  if (!token) return <Navigate to="/login" replace />
   return children
 }
 
@@ -148,7 +151,6 @@ function AppLayout() {
           background: 'transparent',
         }}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
             <Route path="/dashboard" element={<RequireAuth><DashboardPage /></RequireAuth>} />
             <Route path="/main" element={<RequireAuth><MainPage /></RequireAuth>} />
             <Route path="/exercise" element={<RequireAuth><ExercisePage /></RequireAuth>} />
@@ -165,10 +167,25 @@ function AppLayout() {
   )
 }
 
+function LoginEntry() {
+  const navigate = useNavigate()
+  return (
+    <div>
+      <Button style={{ position: 'fixed', top: 16, left: 16, zIndex: 1000 }} onClick={() => navigate('/')}>返回模式选择</Button>
+      <HomePage />
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <HashRouter>
-      <AppLayout />
+      <Routes>
+        <Route path="/" element={<ProfileModePage />} />
+        <Route path="/login" element={<LoginEntry />} />
+        <Route path="/accessibility" element={<AccessiblePage />} />
+        <Route path="*" element={<AppLayout />} />
+      </Routes>
     </HashRouter>
   )
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>SSVEP 桥测试页</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background:#f5f5f5; margin:20px; }
+    #log { background:#111; color:#0f0; padding:12px; height:320px; overflow:auto;
+           font-family: monospace; white-space:pre-wrap; border-radius:6px; }
+    .badge { padding:2px 8px; border-radius:4px; color:#fff; }
+  </style>
+</head>
+<body>
+  <h2>SSVEP 桥测试页（本地 Vue 集成前的联调页）</h2>
+  <p>连接状态：<span id="status" class="badge" style="background:#c00">未连接</span></p>
+  <p>当前状态：<code id="state">-</code></p>
+  <p>当前科目：<code id="subject">-</code></p>
+  <p>画像分数：<code id="profile">-</code></p>
+  <p>学习路径：<code id="path">-</code></p>
+  <div id="log"></div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const log = (s) => { $('log').textContent += s + '\n'; $('log').scrollTop = $('log').scrollHeight; };
+    const ws = new WebSocket('ws://127.0.0.1:8765');
+
+    ws.onopen  = () => { $('status').textContent = '已连接'; $('status').style.background = '#0a0'; log('已连接 ws://127.0.0.1:8765'); };
+    ws.onclose = () => { $('status').textContent = '已断开'; $('status').style.background = '#c00'; };
+    ws.onerror = () => { $('status').textContent = '连接错误'; $('status').style.background = '#c00'; };
+
+    ws.onmessage = (e) => {
+      const m = JSON.parse(e.data);
+      if (m.type === 'state') {
+        $('state').textContent = m.state;
+        $('subject').textContent = m.ctx.subject || '-';
+        $('profile').textContent = JSON.stringify(m.ctx.profile_answers || []);
+        $('path').textContent = JSON.stringify(m.ctx.learning_path || []);
+        log('state -> ' + m.state);
+      } else if (m.type === 'result') {
+        log('result -> ' + m.result + '  (state=' + m.state + ')');
+      }
+    };
+  </script>
+</body>
+</html>
